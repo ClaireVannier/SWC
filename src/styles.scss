@@ -1,0 +1,21 @@
+// src/styles/styles.scss
+
+@import '../src/styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-background;
+  color: $color-text;
+  font-family: $font-title;
+}
+
+ul,ol, li, a {
+  text-decoration: none;
+  list-style: none;
+}

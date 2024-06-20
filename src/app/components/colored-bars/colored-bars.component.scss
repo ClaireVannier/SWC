@@ -1,0 +1,43 @@
+@import "../../../styles/variables"; // Importation des variables SCSS
+
+.colored-bars {
+    margin: 0;
+    padding: 0;
+  position: absolute;
+  top: 75px; // Ajuste cette valeur en fonction de la hauteur du header
+  right: 0;
+  width: 160px; // Largeur totale des bandes
+  height: calc(100% - 75px); // Hauteur totale moins la hauteur du header et du footer (75px + 70px)
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    height: 100vh; // Hauteur totale moins la hauteur du footer (75px + 70px)
+}
+
+  .bar {
+    position: absolute;
+    width: 20px; // Largeur de chaque bande
+    height: 100%;
+  }
+
+  .green {
+    background-color: #BAFFC9;
+    right: 80px; // Positionne chaque bande avec un espacement
+  }
+
+  .yellow {
+    background-color: #FFFFBA;
+    right: 60px; // Positionne chaque bande avec un espacement
+  }
+
+  .blue {
+    background-color: #BAE1FF;
+    right: 40px; // Positionne chaque bande avec un espacement
+  }
+
+  .pink {
+    background-color: #FFB3BA;
+    right: 20px; // Positionne chaque bande avec un espacement
+  }
+}

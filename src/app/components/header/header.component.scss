@@ -1,0 +1,129 @@
+@import "../../../styles.scss"; // Importation des styles globaux
+
+// Styles pour le header
+header {
+  background-color: black; // Couleur de fond noire pour le header
+  width: 100%; // Prend toute la largeur de l'écran
+  height: 75px; // Hauteur fixe de 75px
+  display: flex; // Utilisation de flexbox pour le positionnement des éléments
+  align-items: center; // Centrage vertical du contenu du header
+
+  // Styles pour la navigation à l'intérieur du header
+  nav {
+    display: flex; // Flexbox pour organiser les éléments de la navigation
+    flex-direction: row; // Disposition en ligne des éléments
+    justify-content: space-between; // Espace entre les éléments pour les séparer uniformément
+    align-items: center; // Centrage vertical des éléments
+    width: 100%; // Prend toute la largeur disponible
+    padding: 0 30px 0 66px; // Espacement intérieur du nav
+  }
+
+  // Styles pour la liste des liens de navigation
+  ul {
+    display: flex; // Flexbox pour organiser les éléments de la liste
+    align-items: center; // Centrage vertical des éléments
+    gap: 10px; // Espacement entre les éléments de la liste
+
+    li {
+      position: relative; // Positionnement relatif pour les indicateurs de couleur
+      margin-left: 1rem; // Marge à gauche pour les éléments de la liste
+
+      // Styles spécifiques pour chaque lien de la liste
+      &:nth-child(1) a {
+        color: #baffc9; // Couleur verte pour le premier lien
+      }
+
+      &:nth-child(2) a {
+        color: #ffffba; // Couleur jaune pour le deuxième lien
+      }
+
+      &:nth-child(3) a {
+        color: #bae1ff; // Couleur bleue pour le troisième lien
+      }
+
+      &:nth-child(4) a {
+        color: #ffb3ba; // Couleur rose pour le quatrième lien
+      }
+
+      // Styles pour les liens
+      a {
+        font-size: 20px; // Taille de police pour les liens
+        margin-right: 7px; // Marge à droite pour espacer les liens
+        transition: color 0.3s ease; // Transition de couleur pour un effet fluide
+      }
+
+      // Styles pour les indicateurs de couleur
+      .color-indicator {
+        position: absolute; // Positionnement absolu pour superposer les indicateurs
+        width: 25px; // Largeur des indicateurs de couleur
+        height: 25px; // Hauteur des indicateurs de couleur
+        background-size: cover; // Ajustement de l'image de fond pour couvrir toute la zone
+        opacity: 0; // Opacité initiale à 0 (invisible)
+        transition: opacity 0.3s ease; // Transition de l'opacité pour un effet fluide
+        transform: scale(0.5); // Réduction initiale de la taille à 50%
+      }
+
+      // Positionnement et image de fond pour chaque indicateur de couleur
+      .green {
+        background-image: url('../../../assets/green.png'); // Image pour l'indicateur vert
+        left: 30%; // Positionnement horizontal
+        bottom: -17px; // Positionnement vertical
+        transform: translateX(-50%); // Centrage horizontal
+      }
+
+      .yellow {
+        background-image: url('../../../assets/yellow.png'); // Image pour l'indicateur jaune
+        left: 30%; // Positionnement horizontal
+        bottom: -17px; // Positionnement vertical
+        transform: translateX(-50%); // Centrage horizontal
+      }
+
+      .blue {
+        background-image: url('../../../assets/blue.png'); // Image pour l'indicateur bleu
+        left: 25%; // Positionnement horizontal
+        bottom: -17px; // Positionnement vertical
+        transform: translateX(-50%); // Centrage horizontal
+      }
+
+      .pink {
+        background-image: url('../../../assets/pink.png'); // Image pour l'indicateur rose
+        left: 40%; // Positionnement horizontal
+        bottom: -17px; // Positionnement vertical
+        transform: translateX(-50%); // Centrage horizontal
+      }
+
+      // Animation lors du survol des liens
+      &:nth-child(1):hover .green {
+        opacity: 1; // Opacité à 1 (visible)
+        animation: zoomRotate 0.6s ease forwards; // Animation de zoom et rotation
+      }
+
+      &:nth-child(2):hover .yellow {
+        opacity: 1; // Opacité à 1 (visible)
+        animation: zoomRotate 0.6s ease forwards; // Animation de zoom et rotation
+      }
+
+      &:nth-child(3):hover .blue {
+        opacity: 1; // Opacité à 1 (visible)
+        animation: zoomRotate 0.6s ease forwards; // Animation de zoom et rotation
+      }
+
+      &:nth-child(4):hover .pink {
+        opacity: 1; // Opacité à 1 (visible)
+        animation: zoomRotate 0.6s ease forwards; // Animation de zoom et rotation
+      }
+    }
+  }
+}
+
+// Définition des keyframes pour l'animation de zoom et rotation
+@keyframes zoomRotate {
+  0% {
+    opacity: 0; // Opacité à 0 (invisible)
+    transform: scale(0.5) rotate(0deg); // Taille réduite à 50% et pas de rotation
+  }
+  100% {
+    opacity: 1; // Opacité à 1 (visible)
+    transform: scale(1) rotate(360deg); // Taille normale et rotation complète de 360 degrés
+  }
+}

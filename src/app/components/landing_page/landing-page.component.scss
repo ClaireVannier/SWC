@@ -1,0 +1,80 @@
+@import "../../../styles.scss"; // Importation des styles globaux
+
+// Définition des couleurs utilisées pour les animations et le texte
+$colors: (
+  1: #baffc9, // Vert
+  2: #ffffba, // Jaune
+  3: #bae1ff, // Bleu
+  4: #ffb3ba  // Rose
+);
+
+// Fonction pour obtenir une couleur à partir de l'index
+@function get-color($index) {
+  @return map-get($colors, $index);
+}
+
+// Définition de l'animation fadeInBlur
+@keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+// Définition de l'animation moveIn
+@keyframes moveIn {
+  0% {
+    transform: translate(100%, -100%) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+// Styles pour la section principale
+.landing-page {
+  display: flex; // Utilisation de flexbox pour organiser les éléments
+  flex-direction: column; // Disposition en colonne
+  gap: 40px; // Espacement entre les éléments
+  background-color: $color-background; // Couleur de fond de la section principale
+  padding: 4rem; // Espacement intérieur de la section
+  text-align: left; // Alignement du texte à gauche
+  position: relative; // Position relative pour permettre le positionnement absolu des triangles
+
+  h1 {
+    font-size: 3rem; // Taille de la police du titre
+    margin-bottom: 1rem; // Marge inférieure du titre
+    line-height: 0.8; // Hauteur de ligne ajustée pour un meilleur espacement
+    display: block; // Affichage en bloc du titre
+    opacity: 0; // Opacité initiale du titre
+    filter: blur(10px); // Filtre de flou initial
+    animation: fadeInBlur 2.4s forwards; // Animation d'apparition avec flou
+
+    span {
+      display: inline-block; // Affichage en ligne des spans
+      margin-bottom: 0.5rem; // Marge inférieure des spans
+
+      // Application des couleurs aux spans selon leur position
+      @for $i from 1 through 4 {
+        &:nth-child(4n + #{$i}) {
+          color: get-color($i);
+        }
+      }
+    }
+  }
+
+  p {
+    color: #cccccc; // Couleur du texte du paragraphe
+    font-weight: 200; // Poids de la police du paragraphe
+    font-size: 24px; // Taille de la police du paragraphe
+    line-height: 1.5; // Hauteur de ligne du paragraphe
+    letter-spacing: 0.5px; // Espacement des lettres du paragraphe
+    margin-bottom: 2rem; // Marge inférieure du paragraphe
+  }
+}

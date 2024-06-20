@@ -1,0 +1,176 @@
+@import "../../../styles/variables"; // Importation des variables SCSS
+
+// Définition des couleurs utilisées pour les animations et le texte
+$colors: (
+  1: #baffc9, // Vert
+  2: #ffffba, // Jaune
+  3: #bae1ff, // Bleu
+  4: #ffb3ba  // Rose
+);
+
+// Fonction pour obtenir une couleur à partir de l'index
+@function get-color($index) {
+  @return map-get($colors, $index);
+}
+
+.service-container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-top: 50px;
+
+  .service-section {
+    display: flex;
+    align-items: center;
+    background-color: $color-background;
+    color: $color-text;
+    margin: 20px 0;
+    border-radius: 8px;
+
+    .logo-container {
+      padding-left: 58px;
+      .logo {
+        width: 150px;
+        height: auto;
+      }
+    }
+
+    .service-content {
+      .service-title {
+        font-family: $font-title;
+        font-weight: 100;
+        font-size: 40px;
+        margin-bottom: -35px; // Espacement de 5px entre le h1 et la div end-of-word
+        margin-left: 2px;
+        color: whitesmoke;
+      }
+
+      .end-of-word {
+        display: inline-block;
+        margin-top: 5px; // Espacement de 5px entre la div end-of-word et le h1
+        font-size: 70px;
+
+        .transformer {
+          display: inline-block;
+          font-weight: bold;
+
+          @for $i from 1 through 4 {
+            &:nth-child(4n + #{$i}) {
+              color: get-color($i);
+            }
+          }
+        }
+      }
+
+      .highlight {
+        color: whitesmoke;
+        font-weight: 300;
+      }
+
+      p {
+        font-family: $font-title;
+        font-weight: 100;
+        line-height: 1.5;
+        font-size: 22px;
+        margin-left: 22px;
+      }
+    }
+  }
+
+  // Styles spécifiques pour chaque section
+  .section-mesure .service-content p {
+    &:nth-of-type(1) {
+      margin-left: 20px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 20px;
+    }
+  }
+
+  .section-frontend .service-content p {
+    &:nth-of-type(1) {
+      margin-left: 0px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 0px;
+    }
+  }
+
+  .section-backend .service-content p {
+    &:nth-of-type(1) {
+      margin-left: 25px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 25px;
+    }
+    &:nth-of-type(3) {
+      margin-left: 25px;
+    }
+  }
+
+  .section-support .service-content p {
+    &:nth-of-type(1) {
+      margin-left: 25px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 25px;
+    }
+    &:nth-of-type(3) {
+      margin-left: 25px;
+    }
+  }
+
+  .section-languages .service-content p {
+    &:nth-of-type(1) {
+      margin-left: 25px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 25px;
+    }
+    &:nth-of-type(3) {
+      margin-left: 25px;
+    }
+  }
+
+  .section-extras .service-content p {
+    &:nth-of-type(1) {
+      margin-left: 20px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 20px;
+    }
+    &:nth-of-type(3) {
+      margin-left: 20px;
+    }
+    &:nth-of-type(4) {
+      margin-left: 20px;
+    }
+  }
+
+  .section-approach .service-content p {
+    &:nth-of-type(1) {
+      margin-left: 25px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 25px;
+    }
+    &:nth-of-type(3) {
+      margin-left: 25px;
+    }
+    &:nth-of-type(4) {
+      margin-left: 25px;
+    }
+  }
+
+  .section-pricing .service-content p {
+    &:nth-of-type(1) {
+      margin-left: 0px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 0px;
+    }
+    &:nth-of-type(3) {
+      margin-left: 0px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import "../../../styles/_variables.scss"; // Importation des variables SCSS
+
+// Styles pour le footer
+footer {
+  display: flex; // Affichage en flexbox
+  justify-content: space-around; // Espacement entre les éléments
+  position: relative; // Position fixe en bas de la page
+  bottom: 0; // Aligné en bas de la fenêtre
+  width: calc(100% - 60px); // Prend toute la largeur moins 30px de chaque côté
+  padding-top: 60px;
+  margin-bottom: 5px;
+
+  p {
+    margin: 0.8rem 0; // Marge pour les paragraphes
+    font-family: 'Arial', sans-serif; // Police de caractères
+    color: #cccccc; // Couleur du texte
+  }
+
+  // Styles pour les liens sociaux
+  .social-links {
+    display: flex; // Affichage en flexbox
+    gap: 10px; // Espacement entre les éléments
+
+    li {
+      list-style: none; // Suppression des puces de la liste
+
+      a {
+        display: inline-block; // Affichage en ligne des liens
+        .ai-github-fill, .ai-linkedin-box-fill {
+          width: 26px; // Largeur des icônes sociales
+          height: 23px; // Hauteur des icônes sociales
+          fill: #ffffff; // Couleur blanche pour les icônes
+        }
+
+      }
+    }
+  }
+}
