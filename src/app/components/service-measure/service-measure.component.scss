@@ -1,11 +1,10 @@
 @import "../../../styles/variables"; // Importation des variables SCSS
 
-// Définition des couleurs utilisées pour les animations et le texte
 $colors: (
   1: #baffc9, // Vert
   2: #ffffba, // Jaune
   3: #bae1ff, // Bleu
-  4: #ffb3ba  // Rose
+  4: #ffb3ba // Rose
 );
 
 // Fonction pour obtenir une couleur à partir de l'index
@@ -16,7 +15,7 @@ $colors: (
 .service-container {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
   margin-top: 50px;
 
   .service-section {
@@ -26,29 +25,39 @@ $colors: (
     color: $color-text;
     margin: 20px 0;
     border-radius: 8px;
+    padding: 20px;
+    max-width: 100%; // S'assure que les sections ne débordent pas
 
     .logo-container {
-      padding-left: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 20px;
+
       .logo {
-        width: 150px;
+        width: 140px;
         height: auto;
       }
     }
 
     .service-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
       .service-title {
         font-family: $font-title;
         font-weight: 100;
-        font-size: 40px;
-        margin-bottom: -35px; // Espacement de 5px entre le h1 et la div end-of-word
+        font-size: 36px;
+        margin-bottom: -30px; // Espacement de 5px entre le h1 et la div end-of-word
         margin-left: 2px;
         color: whitesmoke;
       }
 
       .end-of-word {
         display: inline-block;
+        font-size: 65px;
         margin-top: 5px; // Espacement de 5px entre la div end-of-word et le h1
-        font-size: 70px;
 
         .transformer {
           display: inline-block;
@@ -72,106 +81,107 @@ $colors: (
         font-weight: 100;
         line-height: 1.5;
         font-size: 22px;
-        margin-left: 22px;
-        width: 900px;
+        width: 800px;
+        margin-left: 4px;
       }
     }
   }
 
-  // Styles spécifiques pour chaque section
-  .section-mesure .service-content p {
-    &:nth-of-type(1) {
-      margin-left: 20px;
-    }
-    &:nth-of-type(2) {
-      margin-left: 20px;
+  // Responsive styles
+  @media (max-width: 1000px) {
+    .service-section {
+      .logo-container {
+        .logo {
+          width: 120px; // Réduction de la taille du logo
+        }
+      }
+
+      .service-content {
+        .service-title {
+          font-size: 35px; // Réduction de la taille du titre
+        }
+
+        .end-of-word {
+          font-size: 60px; // Réduction de la taille de end-of-word
+        }
+
+        p {
+          font-size: 20px; // Réduction de la taille du texte
+          width: 700px; // Réduction de la largeur des paragraphes
+
+          &.second-paragraph {
+            margin-left: calc(120px + 20px); // Alignement horizontal avec la fin du logo
+          }
+        }
+      }
     }
   }
 
-  .section-frontend .service-content p {
-    &:nth-of-type(1) {
-      margin-left: 0px;
-    }
-    &:nth-of-type(2) {
-      margin-left: 0px;
+  @media (max-width: 800px) {
+    .service-section {
+      .logo-container {
+        padding-right: 0;
+        .logo {
+          width: 90px; // Réduction de la taille du logo
+        }
+      }
+
+      .service-content {
+        margin-left: 15px;
+        max-width: 520px;
+        .service-title {
+          font-size: 30px;
+        }
+
+        .end-of-word {
+          font-size: 50px;
+        }
+
+        p {
+          width: 100%;
+          margin-left: 0;
+          font-size: 18px;
+
+          &.second-paragraph {
+            margin-left: calc(100px + 10px); // Alignement horizontal avec la fin du logo
+          }
+        }
+      }
     }
   }
 
-  .section-backend .service-content p {
-    &:nth-of-type(1) {
-      margin-left: 25px;
-    }
-    &:nth-of-type(2) {
-      margin-left: 25px;
-    }
-    &:nth-of-type(3) {
-      margin-left: 25px;
-    }
-  }
+  @media (max-width: 600px) {
+    .service-section {
+      align-items: center;
+      text-align: left;
+      max-width: 350px; // Limite la largeur à 330px
 
-  .section-support .service-content p {
-    &:nth-of-type(1) {
-      margin-left: 25px;
-    }
-    &:nth-of-type(2) {
-      margin-left: 25px;
-    }
-    &:nth-of-type(3) {
-      margin-left: 25px;
-    }
-  }
+      .logo-container {
+        padding-right: 0;
+        .logo {
+          width: 80px; // Réduction de la taille du logo
+        }
+      }
 
-  .section-languages .service-content p {
-    &:nth-of-type(1) {
-      margin-left: 25px;
-    }
-    &:nth-of-type(2) {
-      margin-left: 25px;
-    }
-    &:nth-of-type(3) {
-      margin-left: 25px;
-    }
-  }
+      .service-content {
+        margin-left: 18px;
 
-  .section-extras .service-content p {
-    &:nth-of-type(1) {
-      margin-left: 20px;
-    }
-    &:nth-of-type(2) {
-      margin-left: 20px;
-    }
-    &:nth-of-type(3) {
-      margin-left: 20px;
-    }
-    &:nth-of-type(4) {
-      margin-left: 20px;
-    }
-  }
+        .service-title {
+          font-size: 20px;
+        }
 
-  .section-approach .service-content p {
-    &:nth-of-type(1) {
-      margin-left: 25px;
-    }
-    &:nth-of-type(2) {
-      margin-left: 25px;
-    }
-    &:nth-of-type(3) {
-      margin-left: 25px;
-    }
-    &:nth-of-type(4) {
-      margin-left: 25px;
-    }
-  }
+        .end-of-word {
+          margin-top: 20px;
+          font-size: 30px;
+        }
 
-  .section-pricing .service-content p {
-    &:nth-of-type(1) {
-      margin-left: 0px;
-    }
-    &:nth-of-type(2) {
-      margin-left: 0px;
-    }
-    &:nth-of-type(3) {
-      margin-left: 0px;
+        p {
+          width: 100%;
+          margin-left: 0;
+          font-size: 14px;
+
+        }
+      }
     }
   }
 }

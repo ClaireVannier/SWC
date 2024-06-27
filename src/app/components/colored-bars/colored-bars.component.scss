@@ -1,43 +1,138 @@
 @import "../../../styles/variables"; // Importation des variables SCSS
 
 .colored-bars {
-    margin: 0;
-    padding: 0;
-  position: absolute;
+  margin: 0;
+  padding: 0;
+  position: fixed;
   top: 75px; // Ajuste cette valeur en fonction de la hauteur du header
   right: 0;
-  width: 160px; // Largeur totale des bandes
-  height: calc(100% - 75px); // Hauteur totale moins la hauteur du header et du footer (75px + 70px)
+  width: 120px; // Largeur totale des bandes pour ordinateur (4 bandes x 30px)
+  height: calc(100% - 75px); // Hauteur totale moins la hauteur du header
 
-  &.sticky {
-    position: fixed;
+  &.full-height {
     top: 0;
-    height: 100vh; // Hauteur totale moins la hauteur du footer (75px + 70px)
-}
+    height: 100vh; // Hauteur totale de l'écran
+  }
 
   .bar {
     position: absolute;
-    width: 35px; // Largeur de chaque bande
+    width: 30px; // Largeur de chaque bande pour ordinateur
     height: 100%;
   }
 
   .green {
     background-color: #BAFFC9;
-    right: 92px; // Positionne chaque bande avec un espacement
+    right: 90px; // Positionne chaque bande avec un espacement
   }
 
   .yellow {
     background-color: #FFFFBA;
-    right: 63px; // Positionne chaque bande avec un espacement
+    right: 60px; // Positionne chaque bande avec un espacement
   }
 
   .blue {
     background-color: #BAE1FF;
-    right: 33px; // Positionne chaque bande avec un espacement
+    right: 30px; // Positionne chaque bande avec un espacement
   }
 
   .pink {
     background-color: #FFB3BA;
-    right: 0px; // Positionne chaque bande avec un espacement
+    right: 0; // Positionne chaque bande avec un espacement
+  }
+}
+
+@media (max-width: 1000px) {
+  .colored-bars {
+    width: 60px; // Largeur totale des bandes pour mobile (4 bandes x 15px)
+    height: calc(100% - 75px); // Hauteur totale moins la hauteur du header
+
+    &.full-height {
+      top: 0;
+      height: 100vh; // Hauteur totale de l'écran
+    }
+
+    .bar {
+      width: 15px; // Largeur de chaque bande pour mobile
+    }
+
+    .green {
+      right: 45px; // Positionne chaque bande avec un espacement
+    }
+
+    .yellow {
+      right: 30px; // Positionne chaque bande avec un espacement
+    }
+
+    .blue {
+      right: 15px; // Positionne chaque bande avec un espacement
+    }
+
+    .pink {
+      right: 0; // Positionne chaque bande avec un espacement
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .colored-bars {
+    width: 60px; // Largeur totale des bandes pour mobile (4 bandes x 15px)
+    height: calc(100% - 75px); // Hauteur totale moins la hauteur du header
+
+    &.full-height {
+      top: 0;
+      height: 100vh; // Hauteur totale de l'écran
+    }
+
+    .bar {
+      width: 15px; // Largeur de chaque bande pour mobile
+    }
+
+    .green {
+      right: 45px; // Positionne chaque bande avec un espacement
+    }
+
+    .yellow {
+      right: 30px; // Positionne chaque bande avec un espacement
+    }
+
+    .blue {
+      right: 15px; // Positionne chaque bande avec un espacement
+    }
+
+    .pink {
+      right: 0; // Positionne chaque bande avec un espacement
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .colored-bars {
+    width: 20px; // Largeur totale des bandes pour mobile (4 bandes x 15px)
+    height: calc(100% - 75px); // Hauteur totale moins la hauteur du header
+
+    &.full-height {
+      top: 0;
+      height: 100vh; // Hauteur totale de l'écran
+    }
+
+    .bar {
+      width: 20px; // Largeur de chaque bande pour mobile
+    }
+
+    .green {
+      right: 20px; // Positionne chaque bande avec un espacement
+    }
+
+    .yellow {
+      right: 10px; // Positionne chaque bande avec un espacement
+    }
+
+    .blue {
+      right: 0px; // Positionne chaque bande avec un espacement
+    }
+
+    .pink {
+      right: -10px; // Positionne chaque bande avec un espacement
+    }
   }
 }

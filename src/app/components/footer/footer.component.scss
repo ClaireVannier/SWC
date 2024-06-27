@@ -38,7 +38,7 @@ footer {
 // Responsive design
 @media (max-width: 1000px) {
   footer {
-    position: fixed;
+    position: relative;
     flex-direction: column-reverse;
     text-align: center;
   }
@@ -46,8 +46,12 @@ footer {
 
 @media (max-width: 600px) {
   footer {
-    padding: 5px 0; // Espacement intérieur réduit
-
+      position: relative;
+      
+      p {
+        font-size: 12px;
+        margin: 3px 0;
+    }
     .social-links {
       gap: 5px; // Espacement réduit entre les éléments
 
