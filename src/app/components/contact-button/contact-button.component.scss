@@ -1,4 +1,4 @@
-@import "../../../styles.scss";
+@import "../../../styles.scss"; // Importation des styles globaux
 
 .contact-button {
   background: linear-gradient(90deg, #BAFFC9, #FFFFBA, #BAE1FF, #FFB3BA);
@@ -47,4 +47,42 @@
 
 .contact-button:hover .envelope .closed {
   opacity: 0;
+}
+
+// Responsive design pour les écrans de moins de 800px
+@media (max-width: 800px) {
+  .contact-button {
+    font-size: 32px; /* Réduction de la taille de la police */
+    padding: 13px 24px; /* Ajustement du padding */
+    gap: 13px; /* Ajustement de l'espace entre le texte et l'enveloppe */
+  }
+
+  .envelope {
+    width: 25px; /* Réduction de la taille de l'enveloppe */
+    height: 30px;
+  }
+
+  .envelope .open,
+  .envelope .closed {
+    font-size: 27px; /* Ajuste la taille de l'icône */
+  }
+}
+
+// Responsive design pour les écrans de moins de 600px
+@media (max-width: 600px) {
+  .contact-button {
+    font-size: 32px; /* Réduction supplémentaire de la taille de la police */
+    padding: 13px 20px; /* Ajustement du padding */
+    gap: 10px; /* Ajustement de l'espace entre le texte et l'enveloppe */
+  }
+
+  .envelope {
+    width: 25px; /* Réduction de la taille de l'enveloppe */
+    height: 30px;
+  }
+
+  .envelope .open,
+  .envelope .closed {
+    font-size: 27px; /* Ajuste la taille de l'icône */
+  }
 }

@@ -14,7 +14,7 @@
     height: 100%;
     clip-path: polygon(100% 0, 100% 100%, 0 0);
     opacity: 0; /* Opacité initiale à 0 */
-    animation: moveIn 1.7s forwards;
+    animation: moveIn 2s forwards;
   }
 
   .green {
@@ -54,5 +54,52 @@
   100% {
     transform: translate(0, 0) rotate(0deg);
     opacity: 1;
+  }
+}
+
+// Responsive design pour les écrans de moins de 800px
+@media (max-width: 800px) {
+  .triangles {
+    width: 300px; // Ajustement de la largeur pour les petits écrans
+    height: 300px; // Ajustement de la hauteur pour les petits écrans
+
+    .green {
+      right: -10px; // Ajustement du positionnement
+    }
+
+    .yellow {
+      right: -80px; // Ajustement du positionnement
+    }
+
+    .blue {
+      right: -150px; // Ajustement du positionnement
+    }
+
+    .pink {
+      right: -210px; // Ajustement du positionnement
+    }
+  }
+}
+
+// Responsive design pour les écrans de moins de 600px
+@media (max-width: 600px) {
+  .triangles {
+    height: 200px; // Ajustement de la hauteur pour les très petits écrans
+
+    .green {
+      right: -5px; // Ajustement du positionnement
+    }
+
+    .yellow {
+      right: -60px; // Ajustement du positionnement
+    }
+
+    .blue {
+      right: -110px; // Ajustement du positionnement
+    }
+
+    .pink {
+      right: -160px; // Ajustement du positionnement
+    }
   }
 }

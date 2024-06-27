@@ -127,3 +127,32 @@ header {
     transform: scale(1) rotate(360deg); // Taille normale et rotation complète de 360 degrés
   }
 }
+
+
+@media (max-width: 800px) {
+  header {
+    height: auto; // Hauteur automatique pour s'adapter au contenu
+    nav {
+      flex-direction: column; // Disposition en colonne des éléments de navigation
+      padding: 20px; // Espacement intérieur pour la navigation
+
+      a {
+        margin-bottom: 10px; // Espacement entre les liens
+      }
+    }
+
+    ul {
+      flex-direction: column; // Disposition en colonne des éléments de la liste
+      align-items: flex-start; // Alignement des éléments à gauche
+      gap: 20px; // Espacement entre les éléments de la liste
+
+      li {
+        margin-left: 0; // Pas de marge à gauche pour les éléments de la liste
+
+        a {
+          font-size: 18px; // Taille de police réduite pour les liens
+        }
+      }
+    }
+  }
+}

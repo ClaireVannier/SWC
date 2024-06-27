@@ -1,14 +1,13 @@
-@import "../../../styles/_variables.scss"; // Importation des variables SCSS
-
-// Styles pour le footer
 footer {
   display: flex; // Affichage en flexbox
-  justify-content: space-around; // Espacement entre les éléments
-  position: relative; // Position fixe en bas de la page
-  bottom: 0; // Aligné en bas de la fenêtre
-  width: calc(100% - 60px); // Prend toute la largeur moins 30px de chaque côté
-  padding-top: 60px;
-  margin-bottom: 5px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: relative; // Position fixe pour le footer
+  bottom: 5px; // Espacement de 5px du bas de la page
+  width: 100%; // Prend toute la largeur de la fenêtre
+  padding: 10px 0; // Espacement intérieur vertical
+  z-index: 1000; // Assurez-vous que le footer est au-dessus d'autres éléments
 
   p {
     margin: 0.8rem 0; // Marge pour les paragraphes
@@ -16,7 +15,6 @@ footer {
     color: #cccccc; // Couleur du texte
   }
 
-  // Styles pour les liens sociaux
   .social-links {
     display: flex; // Affichage en flexbox
     gap: 10px; // Espacement entre les éléments
@@ -26,12 +24,42 @@ footer {
 
       a {
         display: inline-block; // Affichage en ligne des liens
+
         .ai-github-fill, .ai-linkedin-box-fill {
           width: 26px; // Largeur des icônes sociales
           height: 23px; // Hauteur des icônes sociales
           fill: #ffffff; // Couleur blanche pour les icônes
         }
+      }
+    }
+  }
+}
 
+// Responsive design
+@media (max-width: 1000px) {
+  footer {
+    position: fixed;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    padding: 5px 0; // Espacement intérieur réduit
+
+    .social-links {
+      gap: 5px; // Espacement réduit entre les éléments
+
+      li {
+        margin: 0 3px; // Marge autour des éléments réduite
+      }
+
+      a {
+        .ai-github-fill, .ai-linkedin-box-fill {
+          width: 30px; // Réduction de la largeur des icônes sociales
+          height: 27px; // Réduction de la hauteur des icônes sociales
+        }
       }
     }
   }
